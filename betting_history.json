@@ -1,0 +1,44 @@
+{
+    "bets": [
+        {
+            "date": "2024-03-20",
+            "team": "Memphis Grizzlies",
+            "odds": -110,
+            "kelly": 33.24,
+            "result": "win",
+            "user": "jaehoon"
+        },
+        {
+            "date": "2024-03-20",
+            "team": "Houston Rockets",
+            "odds": 150,
+            "kelly": 4.26,
+            "result": "lose",
+            "user": "jaehoon"
+        },
+        {
+            "date": "2024-11-01",
+            "team": "Memphis Grizzlies",
+            "odds": 205,
+            "kelly": 33.2,
+            "result": "pending",
+            "user": "jaehoon"
+        },
+        {
+            "date": "2024-11-01",
+            "team": "San Antonio Spurs",
+            "odds": -120,
+            "kelly": 10.04,
+            "result": "pending",
+            "user": "jaehoon"
+        },
+        {
+            "date": "2024-11-01",
+            "team": "LA Clippers",
+            "odds": 158,
+            "kelly": 19.66,
+            "result": "pending",
+            "user": "jaehoon"
+        }
+    ]
+}

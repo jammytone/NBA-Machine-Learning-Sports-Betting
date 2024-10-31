@@ -19,6 +19,7 @@ xgb_uo.load_model('Models/XGBoost_Models/XGBoost_53.7%_UO-9.json')
 
 def xgb_runner(data, todays_games_uo, frame_ml, games, home_team_odds, away_team_odds, kelly_criterion):
     ml_predictions_array = []
+    ou_predictions_array = []
 
     for row in data:
         ml_predictions_array.append(xgb_ml.predict(xgb.DMatrix(np.array([row]))))
@@ -27,8 +28,6 @@ def xgb_runner(data, todays_games_uo, frame_ml, games, home_team_odds, away_team
     frame_uo['OU'] = np.asarray(todays_games_uo)
     data = frame_uo.values
     data = data.astype(float)
-
-    ou_predictions_array = []
 
     for row in data:
         ou_predictions_array.append(xgb_uo.predict(xgb.DMatrix(np.array([row]))))
@@ -72,9 +71,9 @@ def xgb_runner(data, todays_games_uo, frame_ml, games, home_team_odds, away_team
         count += 1
 
     if kelly_criterion:
-        print("------------Expected Value & Kelly Criterion-----------")
+        print("------------기대값 & 켈리 기준-----------")
     else:
-        print("---------------------Expected Value--------------------")
+        print("---------------------기대값--------------------")
     count = 0
     for game in games:
         home_team = game[0]
@@ -85,12 +84,18 @@ def xgb_runner(data, todays_games_uo, frame_ml, games, home_team_odds, away_team
             ev_away = float(Expected_Value.expected_value(ml_predictions_array[count][0][0], int(away_team_odds[count])))
         expected_value_colors = {'home_color': Fore.GREEN if ev_home > 0 else Fore.RED,
                         'away_color': Fore.GREEN if ev_away > 0 else Fore.RED}
-        bankroll_descriptor = ' Fraction of Bankroll: '
+        bankroll_descriptor = ' 뱅크롤 비율: '
         bankroll_fraction_home = bankroll_descriptor + str(kc.calculate_kelly_criterion(home_team_odds[count], ml_predictions_array[count][0][1])) + '%'
         bankroll_fraction_away = bankroll_descriptor + str(kc.calculate_kelly_criterion(away_team_odds[count], ml_predictions_array[count][0][0])) + '%'
 
-        print(home_team + ' EV: ' + expected_value_colors['home_color'] + str(ev_home) + Style.RESET_ALL + (bankroll_fraction_home if kelly_criterion else ''))
-        print(away_team + ' EV: ' + expected_value_colors['away_color'] + str(ev_away) + Style.RESET_ALL + (bankroll_fraction_away if kelly_criterion else ''))
+        print(home_team + ' 기대값: ' + expected_value_colors['home_color'] + str(ev_home) + Style.RESET_ALL + (bankroll_fraction_home if kelly_criterion else ''))
+        print(away_team + ' 기대값: ' + expected_value_colors['away_color'] + str(ev_away) + Style.RESET_ALL + (bankroll_fraction_away if kelly_criterion else ''))
         count += 1
 
     deinit()
+    
+    # 예측 결과 반환
+    return {
+        'ml': ml_predictions_array,
+        'ou': ou_predictions_array
+    }

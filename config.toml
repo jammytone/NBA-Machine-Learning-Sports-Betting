@@ -182,3 +182,9 @@ data_url = "https://stats.nba.com/stats/leaguedashteamstats?Conference=&DateFrom
         end_date = "2024-4-28"
         start_year = "2023"
         end_year = "2024"
+
+    [create-games.2024-25]
+        start_date = "2024-10-22"
+        end_date = "2025-4-14"
+        start_year = "2024"
+        end_year = "2025"

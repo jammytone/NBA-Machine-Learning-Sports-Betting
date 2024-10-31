@@ -1,193 +1,249 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="ko" data-theme="dark">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>NBA Machine Learning Picks</title>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {}
-                }
+    <title>NBA 머신러닝 예측</title>
+    <style>
+        .bankroll-input {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.5rem;
+            color: white;
+            padding: 0.5rem 1rem;
+            margin-bottom: 1rem;
+        }
+        .bankroll-input:focus {
+            outline: none;
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        
+        /* 모바일 최적화 스타일 */
+        @media (max-width: 768px) {
+            .game-table {
+                font-size: 0.875rem;
+            }
+            .stats-value {
+                font-size: 0.75rem;
+            }
+            .sportsbook-cell {
+                padding: 0.5rem 0.25rem;
+            }
+            .team-name {
+                font-size: 0.875rem;
             }
         }
-    </script>
-</head>
-<body class="bg-gray-900">
-    <main class="relative isolate">
-        <section class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <h1 class="py-8 text-left text-4xl font-medium text-white">🏀 NBA AI Model Picks ({{ today }})</h1>
 
-            <section class="mx-auto flex bg-white/5 px-6 md:px-8 py-6 ring-1 ring-white/10 sm:rounded-3xl lg:mx-0 lg:max-w-none lg:flex-row lg:items-center xl:gap-x-20">
-                <table role="grid" class="min-w-full divide-y divide-gray-700">
+        /* 스크롤 테이블 스타일 */
+        .table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 0 -1rem;
+            padding: 0 1rem;
+        }
+
+        /* 구분선 스타일 */
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 min-h-screen">
+    <main class="relative isolate px-4 py-6 sm:px-6 lg:px-8">
+        <!-- 헤더 섹션 -->
+        <section class="mx-auto max-w-7xl">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-medium text-white mb-6">
+                🏀 NBA AI 모델 예측 <span class="text-gray-400 text-lg sm:text-xl md:text-2xl">({{ today }})</span>
+            </h1>
+
+            <!-- 뱅크롤 입력 섹션 -->
+            <div class="mb-8">
+                <label for="bankroll" class="block text-sm font-medium text-gray-400 mb-2">전체 뱅크롤 금액 (₩)</label>
+                <input type="number" id="bankroll" 
+                       class="bankroll-input w-full sm:w-48" 
+                       placeholder="예: 1000000" 
+                       oninput="updateBetAmounts(this.value)">
+            </div>
+
+            <!-- 메인 테이블 섹션 -->
+            <div class="table-container rounded-xl bg-white/5 backdrop-blur-lg">
+                <table class="min-w-full divide-y divide-gray-700 game-table">
+                    <!-- 테이블 헤더 -->
                     <thead>
                         <tr>
-                            <th class="py-2.5 pl-4 pr-3 text-left text-base font-semibold text-white sm:pl-0">Teams</th>
-                            <th class="py-2.5 text-left text-base font-semibold text-white">Fanduel</th>
-                            <th class="py-2.5 text-left text-base font-semibold text-white">Draft Kings</th>
-                            <th class="py-2.5 text-left text-base font-semibold text-white">BetMGM</th>
+                            <th class="py-3 px-4 text-left text-sm sm:text-base font-semibold text-white">Teams</th>
+                            <th class="py-3 px-2 sm:px-4 text-left text-sm sm:text-base font-semibold text-white">Fanduel</th>
+                            <th class="py-3 px-2 sm:px-4 text-left text-sm sm:text-base font-semibold text-white hidden md:table-cell">Draft Kings</th>
+                            <th class="py-3 px-2 sm:px-4 text-left text-sm sm:text-base font-semibold text-white hidden lg:table-cell">BetMGM</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-gray-700">
-                        <tr>
-                            {% for game_key in data.get('fanduel') %}
-                            {% set teams = game_key.split(':') %}
-                        <tr class="divide-x divide-gray-700">
-                            <td class="py-1">
-                                <table class="w-full">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col" class="py-1 font-semibold text-gray-600 text-left text-base">&nbsp;</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="whitespace-nowrap py-1 pl-4 pr-3 text-base font-medium text-white sm:pl-0">{{ teams[0] }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="whitespace-nowrap py-1 pl-4 pr-3 text-base font-medium text-white sm:pl-0"><span class="text-gray-600">@</span> {{ teams[1] }}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+
+                    <!-- 테이블 바디 -->
+                    <tbody class="divide-y divide-gray-800">
+                        {% for game_key in data.get('fanduel') %}
+                        {% set teams = game_key.split(':') %}
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <!-- 팀 정보 -->
+                            <td class="py-4 px-4">
+                                <div class="flex flex-col space-y-2">
+                                    <span class="team-name text-white">{{ teams[0] }}</span>
+                                    <span class="team-name text-white"><span class="text-gray-500">@</span> {{ teams[1] }}</span>
+                                </div>
                             </td>
+
+                            <!-- 스포츠북 데이터 -->
                             {% for sportsbook in ['fanduel', 'draftkings', 'betmgm'] %}
                             {% set sbgame = data.get(sportsbook)[game_key] %}
-                            {% if not sbgame or not sbgame.away_team or not sbgame.home_team %}
-                            <td class="px-3 {{ sportsbook }}"></td>
-                            {% else %}
-                            {% if teams[0] == sbgame.away_team %}
-                            <td class="px-3 {{ sportsbook }}">
-                                <table class="w-full">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col" class="py-1 font-bold text-gray-500 text-left text-sm">ML</th>
-                                            <th scope="col" class="py-1 font-bold text-gray-500 text-left text-sm">EV</th>
-                                            <th scope="col" class="py-1 font-bold text-gray-500 text-left text-sm">O/U</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="relative isolate">
-                                            <td class="relative isolate whitespace-nowrap py-1 pl-4 pr-3 text-sm font-medium text-white sm:pl-0">
-                                                {% if sbgame.away_team_odds|int > 0 %}+{%endif%}{{ sbgame.away_team_odds }}{% if sbgame.away_confidence %}
-                                                <span class="ev-confidence">
-                                                    <span class="inline-flex mx-0.5 text-gray-600">&bull;</span>
-                                                    <span class="ev-confidence-value">{{ sbgame.away_confidence }}%</span>
+                            <td class="sportsbook-cell px-2 sm:px-4 {% if sportsbook != 'fanduel' %}hidden md:table-cell{% endif %}">
+                                {% if sbgame and sbgame.away_team %}
+                                <div class="space-y-4">
+                                    <!-- 원정팀 데이터 -->
+                                    <div class="stats-container">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center space-x-2">
+                                                <span class="stats-value text-white">
+                                                    {% if sbgame.away_team_odds|int > 0 %}+{% endif %}{{ sbgame.away_team_odds }}
                                                 </span>
-                                                <div class="absolute top-0 inset-x-0 h-0.5 overflow-hidden rounded-full bg-white/10 w-[calc(100%-1rem)]">
-                                                    <div class="h-full rounded-full bg-gradient-to-r from-indigo-500 via-blue-500 to-emerald-500" style="width: {{ sbgame.away_confidence }}%"></div>
-                                                </div>
+                                                {% if sbgame.away_confidence %}
+                                                <span class="stats-value text-gray-400">({{ sbgame.away_confidence }}%)</span>
                                                 {% endif %}
-                                            </td>
-                                            <td class="whitespace-nowrap py-1 pl-4 pr-3 text-sm font-medium text-white sm:pl-0">
-                                                <span class="ev-value">{{ sbgame.away_team_ev }}</span>
-                                            </td>
-                                            <td class="whitespace-nowrap py-1 pl-4 pr-3 text-sm font-medium text-white sm:pl-0">{% if sbgame.ou_pick == 'OVER' %}O{%else%}U{%endif%}
-                                                {{ sbgame.ou_value }}</td>
-                                        </tr>
-                                        <tr class="relative isolate">
-                                            <td class="relative isolate whitespace-nowrap py-1 pl-4 pr-3 text-sm font-medium text-white sm:pl-0">
-                                                {% if sbgame.home_team_odds|int > 0 %}+{%endif%}{{ sbgame.home_team_odds }}{% if sbgame.home_confidence %}
-                                                    <span class="ev-confidence">
-                                                        <span class="inline-flex mx-0.5 text-gray-600">&bull;</span>
-                                                        <span class="ev-confidence-value">{{ sbgame.home_confidence }}%</span>
-                                                    </span>
-                                                    <div class="absolute bottom-0 inset-x-0 h-0.5 overflow-hidden rounded-full bg-white/10 w-[calc(100%-1rem)]">
-                                                        <div class="h-full rounded-full bg-gradient-to-r from-indigo-500 via-blue-500 to-emerald-500" style="width: {{ sbgame.home_confidence }}%"></div>
-                                                    </div>
-                                                {% endif %}
-                                            </td>
-                                            <td class="whitespace-nowrap py-1 pl-4 pr-3 text-sm font-medium text-white sm:pl-0">
-                                                <span class="ev-value">{{ sbgame.home_team_ev }}</span>
-                                            </td>
-                                            <td class="relative isolate whitespace-nowrap py-1 pl-4 pr-3 text-sm font-medium text-white sm:pl-0">
-                                                <span class="ou-confidence">{{ sbgame.ou_confidence }}%</span>
-                                                <div class="absolute bottom-0 inset-x-0 h-0.5 overflow-hidden rounded-full bg-white/10">
-                                                    <div class="h-full rounded-full bg-gradient-to-r from-indigo-500 via-blue-500 to-emerald-500" style="width: {{ sbgame.ou_confidence }}%"></div>
+                                            </div>
+                                            <span class="stats-value text-gray-400">EV: {{ sbgame.away_team_ev }}</span>
+                                        </div>
+                                        {% if sbgame.away_kelly %}
+                                        <div class="kelly-container mt-1">
+                                            <div class="flex flex-col space-y-1">
+                                                <div class="stats-value text-gray-400">
+                                                    켈리: <span class="full-kelly">{{ sbgame.away_kelly }}</span>% / 
+                                                    <span class="half-kelly">{{ "%.1f"|format(sbgame.away_kelly/2) }}</span>%
                                                 </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                                <div class="bet-amounts stats-value text-emerald-500 hidden">
+                                                    베팅: <span class="full-bet">0</span> / <span class="half-bet">0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+
+                                    <div class="divider"></div>
+
+                                    <!-- 홈팀 데이터 -->
+                                    <div class="stats-container">
+                                        <div class="flex items-center space-x-2">
+                                            <span class="stats-value text-white">
+                                                {% if sbgame.home_team_odds|int > 0 %}+{% endif %}{{ sbgame.home_team_odds }}
+                                            </span>
+                                            {% if sbgame.home_confidence %}
+                                            <span class="stats-value text-gray-400">({{ sbgame.home_confidence }}%)</span>
+                                            {% endif %}
+                                        </div>
+                                        {% if sbgame.home_kelly %}
+                                        <div class="kelly-container mt-1">
+                                            <div class="stats-value text-gray-400">
+                                                켈리: {{ sbgame.home_kelly }}% / {{ "%.1f"|format(sbgame.home_kelly/2) }}%
+                                            </div>
+                                            <div class="bet-amounts stats-value text-gray-400 hidden">
+                                                베팅: <span class="full-bet">0</span> / <span class="half-bet">0</span>
+                                            </div>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                {% endif %}
                             </td>
-                            {% endif %}
-                            {% endif %}
                             {% endfor %}
                         </tr>
-                        {%endfor%}
+                        {% endfor %}
                     </tbody>
                 </table>
-            </section>
+            </div>
         </section>
 
-        <div class="absolute inset-x-0 -top-16 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl" aria-hidden="true">
-            <div class="aspect-[1318/752] w-[82.375rem] flex-none bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-15" style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)"></div>
-        </div>
-        <div class="absolute inset-x-0 -bottom-24 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl" aria-hidden="true">
-            <div class="aspect-[1318/752] w-[82.375rem] flex-none rotate-180 bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-15" style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)"></div>
+        <!-- 배경 효과 -->
+        <div class="absolute inset-x-0 -top-16 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl">
+            <div class="aspect-[1318/752] w-[82.375rem] flex-none bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-15"></div>
         </div>
     </main>
+
     <script>
-        function perc2color(perc, min, max) {
-            var base = (max - min);
-            if (base == 0) {
-                perc = 100;
-            } else {
-                perc = (perc - min) / base * 100;
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('ko-KR', {
+                style: 'currency',
+                currency: 'KRW',
+                maximumFractionDigits: 0
+            }).format(amount);
+        }
+
+        function updateBetAmounts(bankroll) {
+            if (!bankroll || isNaN(bankroll)) return;
+            bankroll = parseFloat(bankroll);
+            
+            document.querySelectorAll('.kelly-container').forEach(container => {
+                // 켈리 값 찾기
+                const kellyText = container.textContent;
+                const kellyMatch = kellyText.match(/켈리: ([\d.]+)% \/ ([\d.]+)%/);
+                
+                if (kellyMatch) {
+                    const fullKelly = parseFloat(kellyMatch[1]);
+                    const halfKelly = parseFloat(kellyMatch[2]);
+                    
+                    // 베팅 금액 계산
+                    const fullAmount = Math.round(bankroll * (fullKelly / 100));
+                    const halfAmount = Math.round(bankroll * (halfKelly / 100));
+                    
+                    // 베팅 금액 업데이트
+                    const betAmountsDiv = container.querySelector('.bet-amounts');
+                    if (betAmountsDiv) {
+                        const fullBet = betAmountsDiv.querySelector('.full-bet');
+                        const halfBet = betAmountsDiv.querySelector('.half-bet');
+                        
+                        if (fullBet && halfBet) {
+                            fullBet.textContent = formatCurrency(fullAmount);
+                            halfBet.textContent = formatCurrency(halfAmount);
+                            betAmountsDiv.classList.remove('hidden');
+                        }
+                    }
+                }
+            });
+        }
+
+        // EV 값에 따른 색상 적용
+        document.querySelectorAll('.stats-value').forEach(el => {
+            const evText = el.textContent;
+            if (evText.includes('EV:')) {
+                const ev = parseFloat(evText.split('EV:')[1]);
+                if (ev > 5) {
+                    el.classList.add('text-green-500');
+                } else if (ev > 0) {
+                    el.classList.add('text-emerald-500');
+                } else if (ev > -15) {
+                    el.classList.add('text-orange-500');
+                } else {
+                    el.classList.add('text-red-500');
+                }
             }
+        });
 
-            var colorClass = "rose-600";
+        // 입력 필드 이벤트 리스너
+        const bankrollInput = document.getElementById('bankroll');
+        if (bankrollInput) {
+            bankrollInput.addEventListener('input', (e) => {
+                const value = e.target.value.replace(/[^0-9]/g, '');
+                updateBetAmounts(value);
+            });
+        }
 
-            if (perc < 50) {
-                colorClass = "red-500";
-            } else if (perc >= 50 && perc <= 54){
-                colorClass = "red-500";
-            } else if (perc >= 55 && perc <= 59){
-                colorClass = "orange-500";
-            } else if (perc >= 60 && perc <= 64){
-                colorClass = "blue-500";
-            } else if (perc >= 65 && perc <= 69){
-                colorClass = "indigo-500";
-            } else if (perc >= 70 && perc <= 74){
-                colorClass = "teal-500";
-            } else if (perc >= 75 && perc <= 80){
-                colorClass = "emerald-500";
-            } else {
-                colorClass = "green-500";
+        // 페이지 로드 시 초기화
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM loaded');
+            const bankrollInput = document.getElementById('bankroll');
+            if (bankrollInput && bankrollInput.value) {
+                console.log('Updating initial bet amounts');
+                updateBetAmounts(bankrollInput.value);
             }
-            return colorClass;
-        }
-        function parsePerc(perc){
-            return parseFloat(perc);
-        }
-
-        function evScale(val) {
-            var colorClass = "rose-600";
-            if (val < -15) {
-                colorClass = "red-500";
-            } else if (val <= 0){
-                colorClass = "orange-500";
-            } else if (val >= 0 && val <= 5){
-                colorClass = "emerald-500";
-            } else if (val >= 5.01){
-                colorClass = "green-500";
-            }
-            return colorClass;
-        }
-
-        evs = document.getElementsByClassName("ev-value")
-        evconfs = document.getElementsByClassName("ev-confidence-value")
-        ous = document.getElementsByClassName("ou-confidence")
-        for (var i = 0; i < evs.length; i++) {
-            evs[i].classList.add('text-' + evScale(evs[i].textContent))
-        }
-        for (var i = 0; i < evconfs.length; i++) {
-            evconfs[i].classList.add('text-' + perc2color(parsePerc(evconfs[i].textContent), 0, 100))
-        }
-        for (var i = 0; i < ous.length; i++) {
-            ous[i].classList.add('text-' + perc2color(parsePerc(ous[i].textContent), 0, 100))
-        }
+        });
     </script>
 </body>
 </html>
