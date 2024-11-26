@@ -40,7 +40,6 @@ venv.bak/
 # Project specific
 Data/
 Models/
-*.csv
 *.h5
 *.json.bak
 *.pkl
