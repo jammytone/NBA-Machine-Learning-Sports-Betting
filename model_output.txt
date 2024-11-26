@@ -1,6 +1,6 @@
 ------------기대값 & 켈리 기준-----------
-Washington Wizards 기대값: 14.02 뱅크롤 비율: 8.45%
-Chicago Bulls 기대값: -14.01 뱅크롤 비율: 0%
+Washington Wizards 기대값: 21.74 뱅크롤 비율: 11.81%
+Chicago Bulls 기대값: -16.89 뱅크롤 비율: 0%
 Miami Heat 기대값: -5.11 뱅크롤 비율: 0%
 Milwaukee Bucks 기대값: -2.29 뱅크롤 비율: 0%
 Minnesota Timberwolves 기대값: -21.67 뱅크롤 비율: 0%
