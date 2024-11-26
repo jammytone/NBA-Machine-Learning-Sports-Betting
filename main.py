@@ -7,12 +7,16 @@ import pandas as pd
 import tensorflow as tf
 from colorama import Fore, Style
 from zoneinfo import ZoneInfo
-
+import sqlite3
+import os
+import sys
 from src.DataProviders.SbrOddsProvider import SbrOddsProvider
 from src.Predict import NN_Runner, XGBoost_Runner
 from src.Utils.Dictionaries import team_index_current
 from src.Utils.tools import create_todays_games_from_odds, get_json_data, to_data_frame, get_todays_games_json, create_todays_games
 from src.Utils import Kelly_Criterion as kc
+
+# fanduel, draftkings, betmgm, pointsbet, caesars, wynn, bet_rivers_ny
 
 todays_games_url = 'https://data.nba.com/data/10s/v2015/json/mobile_teams/nba/2024/scores/00_todays_scores.json'
 data_url = 'https://stats.nba.com/stats/leaguedashteamstats?' \
@@ -34,6 +38,11 @@ def createTodaysGames(games, df, odds):
     home_team_days_rest = []
     away_team_days_rest = []
 
+    # 경기가 없는 경우 처리
+    if not games:
+        print("오늘/내일 예정된 경기가 없습니다.")
+        return None, None, None, None, None
+
     for game in games:
         home_team = game[0]
         away_team = game[1]
@@ -53,7 +62,8 @@ def createTodaysGames(games, df, odds):
             away_team_odds.append(input(away_team + ' odds: '))
 
         # calculate days rest for both teams
-        schedule_df = pd.read_csv('Data/nba-2024-UTC.csv', parse_dates=['Date'], date_format='%d/%m/%Y %H:%M')
+        schedule_df = pd.read_csv('Data/nba-2024-UTC.csv')
+        schedule_df['Date'] = pd.to_datetime(schedule_df['Date'])
         home_games = schedule_df[(schedule_df['Home Team'] == home_team) | (schedule_df['Away Team'] == home_team)]
         away_games = schedule_df[(schedule_df['Home Team'] == away_team) | (schedule_df['Away Team'] == away_team)]
         today_et = datetime.now(ZoneInfo("America/New_York")).replace(tzinfo=None)
@@ -80,6 +90,11 @@ def createTodaysGames(games, df, odds):
         stats['Days-Rest-Away'] = away_days_off.days
         match_data.append(stats)
 
+    # match_data가 비어있는 경우 처리
+    if not match_data:
+        print("처리할 경기 데이터가 없습니다.")
+        return None, None, None, None, None
+
     games_data_frame = pd.concat(match_data, ignore_index=True, axis=1)
     games_data_frame = games_data_frame.T
 
@@ -100,27 +115,35 @@ def expected_value(probability, american_odds):
     return probability * (decimal_odds - 1) - (1 - probability)
 
 
-def save_predictions(games, predictions, odds):
-    """예측 결과를 JSON 파일로 저장하고 베팅 히스토리 업데이트"""
-    results = {
-        "games": []
-    }
+def save_predictions(games, predictions, odds, target_date):
+    """예측 결과를 CSV 파일에 저장하고 승패 최종 파일에도 추가"""
     
-    # 오늘 날짜
-    today = datetime.now().strftime("%Y-%m-%d")
+    # KST로 날짜 변환 (ET + 1일)
+    kst_date = target_date + timedelta(days=1)  # 하루 추가
+    game_date = kst_date.strftime('%m/%d')
     
-    # 기존 베팅 히스토리 로드
+    # 정확한 파일 경로 지정
+    file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'NBA_승패_최종 - 승패.csv')
+    
     try:
-        with open('betting_history.json', 'r') as f:
-            betting_history = json.load(f)
+        final_df = pd.read_csv(file_path)
+        print(f"기존 데이터 행 수: {len(final_df)}")
+        # 현재 날짜의 데이터를 제외한 데이터만 유지
+        final_df = final_df[final_df['날짜'] != game_date]
+        initial_bank = final_df['잔액'].iloc[-1] if not final_df.empty else 1000
     except FileNotFoundError:
-        betting_history = {"bets": []}
+        print("새로운 파일을 생성합니다.")
+        final_df = pd.DataFrame(columns=[
+            '날짜', '홈', '어웨이', '예측', '확률', '배당', '결과', 
+            '켈리 비율', '진입', '자본금 변화', '날짜별 초기 잔액', '잔액'
+        ])
+        initial_bank = 1000
+
+    new_records = []
+    current_date = None
+    current_bank = initial_bank
     
-    # 오늘 날짜의 기존 베팅 삭제 (재실행 시 중복 방지)
-    betting_history["bets"] = [bet for bet in betting_history["bets"] if bet["date"] != today]
-    
-    count = 0
-    for game in games:
+    for count, game in enumerate(games):
         home_team = game[0]
         away_team = game[1]
         game_key = f"{home_team}:{away_team}"
@@ -129,97 +152,184 @@ def save_predictions(games, predictions, odds):
             game_odds = odds[game_key]
             winner = "HOME" if np.argmax(predictions['ml'][count]) == 1 else "AWAY"
             winner_team = home_team if winner == "HOME" else away_team
-            winner_prob = round(float(predictions['ml'][count][0][1 if winner == "HOME" else 0]) * 100, 1)
+            prob = float(predictions['ml'][count][0][1 if winner == "HOME" else 0])
             
-            ou_pred = "OVER" if np.argmax(predictions['ou'][count]) == 1 else "UNDER"
-            ou_prob = round(float(predictions['ou'][count][0][1 if ou_pred == "OVER" else 0]) * 100, 1)
-            
-            # 켈리 기준 계산
+            # 배당률 변환
             if winner == "HOME":
-                odds_value = int(game_odds[home_team]['money_line_odds'])
-                kelly = kc.calculate_kelly_criterion(odds_value, winner_prob/100)
+                odds_value = float(game_odds[home_team]['money_line_odds'])
             else:
-                odds_value = int(game_odds[away_team]['money_line_odds'])
-                kelly = kc.calculate_kelly_criterion(odds_value, winner_prob/100)
+                odds_value = float(game_odds[away_team]['money_line_odds'])
             
-            # 기대값이 양수이고 켈리 기준이 양수인 경우만 베팅 히스토리에 추가
-            ev = round(float(expected_value(winner_prob/100, odds_value)), 2)
-            if ev > 0 and kelly > 0:
-                betting_history["bets"].append({
-                    "date": today,
-                    "team": winner_team,
-                    "odds": odds_value,
-                    "kelly": kelly,
-                    "result": "pending",  # 경기 결과는 나중에 업데이트
-                    "user": "jaehoon"  # 또는 "kyungnam"
-                })
+            if odds_value >= 100:
+                decimal_odds = (odds_value / 100) + 1
+            else:
+                decimal_odds = (100 / abs(odds_value)) + 1
             
-            results["games"].append({
-                "teams": f"{home_team} vs {away_team}",
-                "win_prediction": f"{winner_team} ({winner_prob}%)",
-                "ou_prediction": f"{ou_pred} {game_odds['under_over_odds']} ({ou_prob}%)",
-                "kelly": f"{kelly}%",
-                "half_kelly": f"{kelly/2}%",
-                "expected_value": ev
-            })
-        count += 1
+            # 켈리 비율 계산
+            kelly = min(0.1, max(0, (prob * (decimal_odds - 1) - (1 - prob)) / (decimal_odds - 1)))
+            entry_amount = kelly * current_bank
+            
+            # 날짜별 초기 잔액 계산
+            if current_date != game_date:
+                daily_initial_bank = current_bank
+            else:
+                daily_initial_bank = new_records[-1]['날짜별 초기 잔액'] if new_records else current_bank
+            
+            new_record = {
+                '날짜': game_date,
+                '홈': home_team,
+                '어웨이': away_team,
+                '예측': winner_team,
+                '확률': prob,
+                '배당': round(decimal_odds, 2),
+                '결과': '',  # 결과는 빈칸으로 남겨둠
+                '켈리 비율': kelly,
+                '진입': entry_amount,
+                '자본금 변화': 0,  # 결과 입력 전까지는 0
+                '날짜별 초기 잔액': daily_initial_bank,
+                '잔액': daily_initial_bank  # 결과 입력 전까지는 초기 잔액과 동일
+            }
+            new_records.append(new_record)
+            current_date = game_date
     
-    # predictions.json 파일로 저장
-    with open('predictions.json', 'w') as f:
-        json.dump(results, f)
+    # 새로운 데이터를 DataFrame에 추가
+    if new_records:
+        new_df = pd.DataFrame(new_records)
+        print(f"새로운 데이터 행 수: {len(new_df)}")  # 디버깅용
+        
+        new_df = new_df.astype({
+            '날짜': str,
+            '홈': str,
+            '어웨이': str,
+            '예측': str,
+            '확률': float,
+            '배당': float,
+            '결과': str,
+            '켈리 비율': float,
+            '진입': float,
+            '자본금 변화': float,
+            '날짜별 초기 잔액': float,
+            '잔액': float
+        })
+        
+        if final_df.empty:
+            final_df = new_df
+        else:
+            final_df = pd.concat([final_df, new_df], ignore_index=True)
+        
+        print(f"최종 데이터 행 수: {len(final_df)}")  # 디버깅용
+        
+        try:
+            final_df.to_csv(file_path, index=False, encoding='utf-8-sig')
+            print(f"파일이 성공적으로 저장되었습니다: {file_path}")
+        except Exception as e:
+            print(f"파일 저장 중 오류 발생: {str(e)}")
+
+
+def get_historical_odds(target_date):
+    """SQLite에서 특정 날짜의 배당률 데이터를 가져오는 함수"""
+    # 현재 프로젝트 디렉토리 기준으로 상대 경로 사용
+    conn = sqlite3.connect('Data/OddsData.sqlite')
+    cursor = conn.cursor()
     
-    # betting_history.json 파일로 저장
-    with open('betting_history.json', 'w') as f:
-        json.dump(betting_history, f, indent=4)
+    # 날짜 형식을 SQLite 쿼리에 맞게 변환
+    date_str = target_date.strftime('%Y-%m-%d')
+    
+    query = """
+    SELECT Home, Away, ML_Home, ML_Away, OU
+    FROM "odds_2024-25_new"
+    WHERE Date = ?
+    """
+    
+    cursor.execute(query, (date_str,))
+    odds_data = cursor.fetchall()
+    
+    # odds 딕셔너리 형식으 변환
+    odds = {}
+    for home_team, away_team, ml_home, ml_away, ou in odds_data:
+        key = f"{home_team}:{away_team}"
+        odds[key] = {
+            home_team: {'money_line_odds': ml_home},
+            away_team: {'money_line_odds': ml_away},
+            'under_over_odds': ou
+        }
+    
+    conn.close()
+    return odds
 
 
 def main():
     target_date = None
     if args.date:
         target_date = datetime.strptime(args.date, '%Y-%m-%d').date()
-    
-    # KST 오전 -> 전날 ET 경기
-    # KST 오후 -> 당일 ET 경기
-    current_time_kst = datetime.now(ZoneInfo("Asia/Seoul"))
-    if current_time_kst.hour < 12:  # KST 오전
-        target_date = (current_time_kst - timedelta(days=1)).date()
     else:
-        target_date = current_time_kst.date()
+        # KST와 ET 시간 계산
+        current_time_kst = datetime.now(ZoneInfo("Asia/Seoul"))
+        current_time_et = current_time_kst.astimezone(ZoneInfo("America/New_York"))
+        
+        # 현재 ET 날짜 사용
+        target_date = current_time_et.date()
+        
+        # ET 오후 11시 이후면 다음날 경기를 찾음 (당일 경기는 거의 끝남)
+        if current_time_et.hour >= 21:
+            target_date += timedelta(days=1)
+        # ET 오전 4시 이전이면 당일 경기를 찾음 (전날 경기는 이미 끝남)
+        elif current_time_et.hour < 4:
+            pass
+        # 그 외 시간대에는 당일 경기를 찾음
+        else:
+            pass
+
+    print(f"검색하는 날짜 (ET): {target_date}")
+    print(f"현재 시간 (KST): {datetime.now(ZoneInfo('Asia/Seoul')).strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"현재 시간 (ET): {datetime.now(ZoneInfo('America/New_York')).strftime('%Y-%m-%d %H:%M:%S')}")
     
+    # 경기가 없을 경우 다음날 경기 찾기 (최대 7일)
     odds = None
-    if args.odds:
-        odds = SbrOddsProvider(sportsbook=args.odds).get_odds()
+    max_attempts = 7
+    attempts = 0
+    original_date = target_date
+    
+    while attempts < max_attempts:
+        if args.odds:
+            odds_provider = SbrOddsProvider(sportsbook=args.odds, target_date=target_date)
+            odds = odds_provider.get_odds()
+        elif target_date:
+            odds = get_historical_odds(target_date)
+            
+        if odds and any(None not in (game_odds[team]['money_line_odds'] for team in game_odds if team != 'under_over_odds') 
+                       for game_odds in odds.values()):
+            break
+            
+        print(f"{target_date} (ET)에 유효한 배당이 없어 다음 날짜를 확인합니다.")
+        target_date += timedelta(days=1)  # 다음 날짜로 이동
+        attempts += 1
+    
+    if not odds or not any(None not in (game_odds[team]['money_line_odds'] for team in game_odds if team != 'under_over_odds') 
+                          for game_odds in odds.values()):
+        print(f"지난 {max_attempts}일 동안 유효한 배당이 없습니다.")
+        return
+    
+    if odds:
         games = create_todays_games_from_odds(odds)
-        if len(games) == 0:
-            print("오늘의 경기가 없습니다.")
-            return
-            
-        # 배당률이 없는 경기 필터링
-        valid_games = []
-        valid_odds = {}
-        for game in games:
-            key = f"{game[0]}:{game[1]}"
-            if key in odds and odds[key][game[0]]['money_line_odds'] is not None:
-                valid_games.append(game)
-                valid_odds[key] = odds[key]
-                
-        if not valid_games:
-            print(f"{target_date} 경기의 배당률이 아직 제공되지 않습니다.")
-            return
-            
-        games = valid_games
-        odds = valid_odds
     else:
         if target_date:
-            schedule_df = pd.read_csv('Data/nba-2024-UTC.csv', parse_dates=['Date'])
+            schedule_df = pd.read_csv('Data/nba-2024-UTC.csv', 
+                                    parse_dates=['Date'],
+                                    date_format='%d/%m/%Y %H:%M')
+            # UTC 날짜를 ET로 변환 (UTC-4)
+            schedule_df['Date'] = schedule_df['Date'] - pd.Timedelta(hours=4)
             days_games = schedule_df[schedule_df['Date'].dt.date == target_date]
             games = [(row['Home Team'], row['Away Team']) for _, row in days_games.iterrows()]
-        else:
-            data = get_todays_games_json(todays_games_url)
-            games = create_todays_games(data)
     data = get_json_data(data_url)
     df = to_data_frame(data)
     data, todays_games_uo, frame_ml, home_team_odds, away_team_odds = createTodaysGames(games, df, odds)
+
+    # 데이터가 없는 경우 처리
+    if data is None:
+        print("분석할 경기가 없습니다. 프로그램을 종료합니다.")
+        return
+
     if args.nn:
         print("------------Neural Network Model Predictions-----------")
         data = tf.keras.utils.normalize(data, axis=1)
@@ -228,8 +338,9 @@ def main():
     if args.xgb:
         print("---------------XGBoost Model Predictions---------------")
         predictions = XGBoost_Runner.xgb_runner(data, todays_games_uo, frame_ml, games, home_team_odds, away_team_odds, args.kc)
-        save_predictions(games, predictions, odds)
+        
         print("-------------------------------------------------------")
+        print("예측 결과가 성공적으로 저장되었습니다.")
     if args.A:
         print("---------------XGBoost Model Predictions---------------")
         XGBoost_Runner.xgb_runner(data, todays_games_uo, frame_ml, games, home_team_odds, away_team_odds, args.kc)
@@ -249,4 +360,9 @@ if __name__ == "__main__":
     parser.add_argument('-kc', action='store_true', help='Calculates percentage of bankroll to bet based on model edge')
     parser.add_argument('-date', help='Date to analyze (YYYY-MM-DD format)')
     args = parser.parse_args()
-    main()
+    
+    try:
+        main()
+        print("예측 결과가 성공적으로 저장되었습니다.")
+    except Exception as e:
+        print(f"오류 발생: {str(e)}")

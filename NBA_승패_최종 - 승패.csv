@@ -1,0 +1,257 @@
+﻿날짜,홈,어웨이,예측,확률,배당,결과,켈리 비율,진입,자본금 변화,날짜별 초기 잔액,잔액
+10/24,Detroit Pistons,Indiana Pacers,Indiana Pacers,0.708,1.48,승,0.09966666667,99.66666667,47.84,1000.0,1047.84
+10/24,Atlanta Hawks,Brooklyn Nets,Atlanta Hawks,0.587,1.34,승,0.0,0.0,0.0,1000.0,1000.0
+10/24,Miami Heat,Orlando Magic,Miami Heat,0.544,1.74,패,0.0,0.0,0.0,1000.0,1000.0
+10/24,Philadelphia 76ers,Milwaukee Bucks,Philadelphia 76ers,0.529,2.48,패,0.1,100.0,-100.0,1000.0,900.0
+10/24,Toronto Raptors,Cleveland Cavaliers,Cleveland Cavaliers,0.707,1.41,승,0.0,0.0,0.0,1000.0,900.0
+10/24,Houston Rockets,Charlotte Hornets,Houston Rockets,0.752,1.33,패,0.0004848484848,0.4848484848,-0.4848484848,1000.0,899.5151515
+10/24,New Orleans Pelicans,Chicago Bulls,New Orleans Pelicans,0.746,1.45,승,0.1,100.0,45.0,1000.0,944.5151515
+10/24,Utah Jazz,Memphis Grizzlies,Utah Jazz,0.514,2.2,패,0.1,100.0,-100.0,1000.0,844.5151515
+10/24,LA Clippers,Phoenix Suns,LA Clippers,0.611,2.72,패,0.1,100.0,-100.0,1000.0,744.5151515
+10/24,Portland Trail Blazers,Golden State Warriors,Golden State Warriors,0.757,1.39,승,0.1,100.0,39.0,1000.0,783.5151515
+10/25,Washington Wizards,Boston Celtics,Boston Celtics,0.747,1.13,승,0.0,0.0,0.0,783.5151515,783.5151515
+10/25,Dallas Mavericks,San Antonio Spurs,Dallas Mavericks,0.727,1.3,승,0.0,0.0,0.0,783.5151515,783.5151515
+10/25,Denver Nuggets,Oklahoma City Thunder,Denver Nuggets,0.528,1.75,패,0.0,0.0,0.0,783.5151515,783.5151515
+10/25,Sacramento Kings,Minnesota Timberwolves,Minnesota Timberwolves,0.571,1.85,승,0.06629411765,51.94244563,44.15107879,783.5151515,827.6662303
+10/26,Toronto Raptors,Philadelphia 76ers,Philadelphia 76ers,0.708,1.57,패,0.1,82.76662303,-82.76662303,827.6662303,744.8996073
+10/26,Orlando Magic,Brooklyn Nets,Orlando Magic,0.695,1.14,승,0.0,0.0,0.0,827.6662303,744.8996073
+10/26,New York Knicks,Indiana Pacers,New York Knicks,0.634,1.47,승,0.0,0.0,0.0,827.6662303,744.8996073
+10/26,Cleveland Cavaliers,Detroit Pistons,Cleveland Cavaliers,0.81,1.19,승,0.0,0.0,0.0,827.6662303,744.8996073
+10/27,Denver Nuggets,LA Clippers,Denver Nuggets,0.633,1.3,패,0.0,0.0,0.0,744.8996073,744.8996073
+10/27,Washington Wizards,Cleveland Cavaliers,Cleveland Cavaliers,0.726,1.22,승,0.0,0.0,0.0,744.8996073,744.8996073
+10/27,Charlotte Hornets,Miami Heat,Miami Heat,0.715,1.57,승,0.1,74.48996073,42.45927761,744.8996073,787.3588849
+10/27,Detroit Pistons,Boston Celtics,Boston Celtics,0.76,1.1,승,0.0,0.0,0.0,744.8996073,787.3588849
+10/27,Chicago Bulls,Oklahoma City Thunder,Oklahoma City Thunder,0.676,1.22,승,0.0,0.0,0.0,744.8996073,787.3588849
+10/27,Memphis Grizzlies,Orlando Magic,Orlando Magic,0.715,1.81,패,0.1,74.48996073,-74.48996073,744.8996073,712.8689242
+10/27,Minnesota Timberwolves,Toronto Raptors,Minnesota Timberwolves,0.826,1.11,승,0.0,0.0,0.0,744.8996073,712.8689242
+10/27,San Antonio Spurs,Houston Rockets,Houston Rockets,0.643,1.77,패,0.1,74.48996073,-74.48996073,744.8996073,638.3789634
+10/27,Phoenix Suns,Dallas Mavericks,Phoenix Suns,0.59,1.82,승,0.09,67.04096465,54.97359102,744.8996073,693.3525544
+10/27,Los Angeles Lakers,Sacramento Kings,Los Angeles Lakers,0.552,1.68,승,0.0,0.0,0.0,744.8996073,693.3525544
+10/28,Indiana Pacers,Philadelphia 76ers,Indiana Pacers,0.546,1.31,패,0.0,0.0,0.0,693.3525544,693.3525544
+10/28,Portland Trail Blazers,New Orleans Pelicans,New Orleans Pelicans,0.782,1.41,패,0.1,69.33525544,-69.33525544,693.3525544,624.017299
+10/28,Brooklyn Nets,Milwaukee Bucks,Milwaukee Bucks,0.676,1.23,패,0.0,0.0,0.0,693.3525544,624.017299
+10/28,Oklahoma City Thunder,Atlanta Hawks,Oklahoma City Thunder,0.76,1.22,승,0.0,0.0,0.0,693.3525544,624.017299
+10/28,Golden State Warriors,LA Clippers,Golden State Warriors,0.542,1.22,패,0.0,0.0,0.0,693.3525544,624.017299
+10/29,Orlando Magic,Indiana Pacers,Indiana Pacers,0.502,3.15,패,0.1,62.4017299,-62.4017299,624.017299,561.6155691
+10/29,Miami Heat,Detroit Pistons,Miami Heat,0.795,1.3,승,0.1,62.4017299,18.72051897,624.017299,580.3360881
+10/29,Boston Celtics,Milwaukee Bucks,Boston Celtics,0.604,1.24,승,0.0,0.0,0.0,624.017299,580.3360881
+10/29,Toronto Raptors,Denver Nuggets,Denver Nuggets,0.727,1.28,승,0.0,0.0,0.0,624.017299,580.3360881
+10/29,New York Knicks,Cleveland Cavaliers,New York Knicks,0.624,1.63,패,0.02717460317,16.95742247,-16.95742247,624.017299,563.3786656
+10/29,Atlanta Hawks,Washington Wizards,Atlanta Hawks,0.667,1.33,패,0.0,0.0,0.0,624.017299,563.3786656
+10/29,Memphis Grizzlies,Chicago Bulls,Chicago Bulls,0.671,3.25,승,0.1,62.4017299,140.4038923,624.017299,703.7825579
+10/29,San Antonio Spurs,Houston Rockets,Houston Rockets,0.643,1.68,승,0.1,62.4017299,42.43317633,624.017299,746.2157342
+10/29,Dallas Mavericks,Utah Jazz,Dallas Mavericks,0.694,1.18,승,0.0,0.0,0.0,624.017299,746.2157342
+10/29,Phoenix Suns,Los Angeles Lakers,Phoenix Suns,0.627,1.68,승,0.07847058824,48.96700452,33.29756307,624.017299,779.5132973
+10/29,Sacramento Kings,Portland Trail Blazers,Sacramento Kings,0.777,1.13,승,0.0,0.0,0.0,624.017299,779.5132973
+10/30,Minnesota Timberwolves,Dallas Mavericks,Minnesota Timberwolves,0.529,1.57,패,0.0,0.0,0.0,779.5132973,779.5132973
+10/30,Brooklyn Nets,Denver Nuggets,Brooklyn Nets,0.67,2.88,패,0.1,77.95132973,-77.95132973,779.5132973,701.5619676
+10/30,Utah Jazz,Sacramento Kings,Sacramento Kings,0.7,1.39,승,0.0,0.0,0.0,779.5132973,701.5619676
+10/30,Golden State Warriors,New Orleans Pelicans,Golden State Warriors,0.724,2.18,승,0.1,77.95132973,91.98256908,779.5132973,793.5445366
+10/31,Indiana Pacers,Boston Celtics,Boston Celtics,0.582,1.33,패,0.0,0.0,0.0,793.5445366,793.5445366
+10/31,Charlotte Hornets,Toronto Raptors,Charlotte Hornets,0.671,1.37,승,0.0,0.0,0.0,793.5445366,793.5445366
+10/31,Washington Wizards,Atlanta Hawks,Atlanta Hawks,0.567,1.53,패,0.0,0.0,0.0,793.5445366,793.5445366
+10/31,Philadelphia 76ers,Detroit Pistons,Detroit Pistons,0.559,2.52,승,0.1,79.35445366,120.6187696,793.5445366,914.1633062
+10/31,Cleveland Cavaliers,Los Angeles Lakers,Cleveland Cavaliers,0.706,1.48,승,0.0935,74.19641418,35.6142788,793.5445366,949.777585
+10/31,Miami Heat,New York Knicks,Miami Heat,0.581,2.12,패,0.1,79.35445366,-79.35445366,793.5445366,870.4231313
+10/31,Chicago Bulls,Orlando Magic,Orlando Magic,0.515,1.43,패,0.0,0.0,0.0,793.5445366,870.4231313
+10/31,Memphis Grizzlies,Brooklyn Nets,Memphis Grizzlies,0.734,1.13,패,0.0,0.0,0.0,793.5445366,870.4231313
+10/31,Oklahoma City Thunder,San Antonio Spurs,Oklahoma City Thunder,0.671,1.11,승,0.0,0.0,0.0,793.5445366,870.4231313
+10/31,Golden State Warriors,New Orleans Pelicans,Golden State Warriors,0.692,1.7,승,0.1,79.35445366,55.54811756,793.5445366,925.9712489
+10/31,LA Clippers,Portland Trail Blazers,LA Clippers,0.717,1.32,패,0.0,0.0,0.0,793.5445366,925.9712489
+11/1,Memphis Grizzlies,Milwaukee Bucks,Memphis Grizzlies,0.551,2.88,승,0.1,92.59712489,174.0825948,925.9712489,1100.053844
+11/1,Dallas Mavericks,Houston Rockets,Dallas Mavericks,0.643,1.42,패,0.0,0.0,0.0,925.9712489,1100.053844
+11/1,Utah Jazz,San Antonio Spurs,San Antonio Spurs,0.592,2.1,승,0.1,92.59712489,101.8568374,925.9712489,1201.910681
+11/01,LA Clippers,Phoenix Suns,LA Clippers,0.508,2.66,패,0.1,92.59712489,-92.59712489,925.9712489,1109.313556
+11/02,Detroit Pistons,New York Knicks,New York Knicks,0.551,1.34,승,0.0,0.0,0.0,1109.313556,1109.313556
+11/02,Cleveland Cavaliers,Orlando Magic,Cleveland Cavaliers,0.675,1.34,승,0.0,0.0,0.0,1109.313556,1109.313556
+11/02,Charlotte Hornets,Boston Celtics,Boston Celtics,0.549,1.17,승,0.0,0.0,0.0,1109.313556,1109.313556
+11/02,Brooklyn Nets,Chicago Bulls,Brooklyn Nets,0.64,1.74,승,0.1,110.9313556,82.08920316,1109.313556,1191.402759
+11/02,Atlanta Hawks,Sacramento Kings,Sacramento Kings,0.666,1.45,승,0.0,0.0,0.0,1109.313556,1191.402759
+11/02,Toronto Raptors,Los Angeles Lakers,Los Angeles Lakers,0.607,1.29,승,0.0,0.0,0.0,1109.313556,1191.402759
+11/02,New Orleans Pelicans,Indiana Pacers,New Orleans Pelicans,0.519,2.36,승,0.1,110.9313556,150.8666436,1109.313556,1342.269403
+11/02,Minnesota Timberwolves,Denver Nuggets,Minnesota Timberwolves,0.673,1.54,승,0.06744444444,74.81703651,40.40119972,1109.313556,1382.670603
+11/02,Portland Trail Blazers,Oklahoma City Thunder,Oklahoma City Thunder,0.645,1.18,승,0.0,0.0,0.0,1109.313556,1382.670603
+11/03,Charlotte Hornets,Boston Celtics,Charlotte Hornets,0.506,5.0,패,0.1,138.2670603,-138.2670603,1382.670603,1244.403542
+11/03,Toronto Raptors,Sacramento Kings,Sacramento Kings,0.68,1.3,패,0.0,0.0,0.0,1382.670603,1244.403542
+11/03,Philadelphia 76ers,Memphis Grizzlies,Memphis Grizzlies,0.63,1.93,승,0.1,138.2670603,128.5883661,1382.670603,1372.991908
+11/03,Milwaukee Bucks,Cleveland Cavaliers,Cleveland Cavaliers,0.637,2.02,승,0.1,138.2670603,141.0324015,1382.670603,1514.02431
+11/03,San Antonio Spurs,Minnesota Timberwolves,Minnesota Timberwolves,0.514,1.61,패,0.0,0.0,0.0,1382.670603,1514.02431
+11/03,Houston Rockets,Golden State Warriors,Houston Rockets,0.635,1.51,패,0.0,0.0,0.0,1382.670603,1514.02431
+11/03,Washington Wizards,Miami Heat,Washington Wizards,0.529,4.3,패,0.1,138.2670603,-138.2670603,1382.670603,1375.75725
+11/03,Phoenix Suns,Portland Trail Blazers,Phoenix Suns,0.794,1.11,승,0.0,0.0,0.0,1382.670603,1375.75725
+11/03,Denver Nuggets,Utah Jazz,Denver Nuggets,0.559,1.18,승,0.0,0.0,0.0,1382.670603,1375.75725
+11/03,LA Clippers,Oklahoma City Thunder,Oklahoma City Thunder,0.508,1.43,승,0.0,0.0,0.0,1382.670603,1375.75725
+11/04,Brooklyn Nets,Detroit Pistons,Brooklyn Nets,0.731,1.65,패,0.1,137.575725,-137.575725,1375.75725,1238.181525
+11/04,New Orleans Pelicans,Atlanta Hawks,New Orleans Pelicans,0.576,1.61,패,0.0,0.0,0.0,1375.75725,1238.181525
+11/04,Dallas Mavericks,Orlando Magic,Dallas Mavericks,0.561,1.36,승,0.0,0.0,0.0,1375.75725,1238.181525
+11/05,Cleveland Cavaliers,Milwaukee Bucks,Cleveland Cavaliers,0.808,1.38,승,0.1,123.8181525,47.05089794,1238.181525,1285.232423
+11/05,Washington Wizards,Golden State Warriors,Golden State Warriors,0.608,1.18,승,0.0,0.0,0.0,1238.181525,1285.232423
+11/05,Detroit Pistons,Los Angeles Lakers,Los Angeles Lakers,0.641,1.34,패,0.0,0.0,0.0,1238.181525,1285.232423
+11/05,Atlanta Hawks,Boston Celtics,Boston Celtics,0.565,1.21,승,0.0,0.0,0.0,1238.181525,1285.232423
+11/05,Brooklyn Nets,Memphis Grizzlies,Brooklyn Nets,0.551,2.48,승,0.1,123.8181525,183.2508657,1238.181525,1468.483288
+11/05,Miami Heat,Sacramento Kings,Sacramento Kings,0.564,1.86,승,0.05702325581,70.60514183,60.72042197,1238.181525,1529.20371
+11/05,Chicago Bulls,Utah Jazz,Chicago Bulls,0.836,1.3,패,0.1,123.8181525,-123.8181525,1238.181525,1405.385558
+11/05,Houston Rockets,New York Knicks,New York Knicks,0.577,1.76,패,0.02042105263,25.28497008,-25.28497008,1238.181525,1380.100588
+11/05,Minnesota Timberwolves,Charlotte Hornets,Minnesota Timberwolves,0.679,1.21,승,0.0,0.0,0.0,1238.181525,1380.100588
+11/05,Oklahoma City Thunder,Orlando Magic,Oklahoma City Thunder,0.697,1.13,승,0.0,0.0,0.0,1238.181525,1380.100588
+11/05,New Orleans Pelicans,Portland Trail Blazers,New Orleans Pelicans,0.6,1.74,패,0.05945945946,73.62160417,-73.62160417,1238.181525,1306.478984
+11/05,Dallas Mavericks,Indiana Pacers,Dallas Mavericks,0.704,1.47,패,0.07421276596,91.88887571,-91.88887571,1238.181525,1214.590108
+11/05,Denver Nuggets,Toronto Raptors,Denver Nuggets,0.725,1.18,승,0.0,0.0,0.0,1238.181525,1214.590108
+11/05,Phoenix Suns,Philadelphia 76ers,Phoenix Suns,0.711,1.34,승,0.0,0.0,0.0,1238.181525,1214.590108
+11/05,LA Clippers,San Antonio Spurs,LA Clippers,0.507,1.58,승,0.0,0.0,0.0,1238.181525,1214.590108
+11/07,Charlotte Hornets,Detroit Pistons,Detroit Pistons,0.598,1.79,패,0.08913924051,108.2676397,-108.2676397,1214.590108,1106.322468
+11/07,Indiana Pacers,Orlando Magic,Indiana Pacers,0.629,1.45,승,0.0,0.0,0.0,1214.590108,1106.322468
+11/07,Atlanta Hawks,New York Knicks,New York Knicks,0.599,1.34,패,0.0,0.0,0.0,1214.590108,1106.322468
+11/07,Boston Celtics,Golden State Warriors,Boston Celtics,0.576,1.39,패,0.0,0.0,0.0,1214.590108,1106.322468
+11/07,Memphis Grizzlies,Los Angeles Lakers,Memphis Grizzlies,0.632,1.86,승,0.1,121.4590108,104.4547493,1214.590108,1210.777217
+11/07,Houston Rockets,San Antonio Spurs,Houston Rockets,0.63,1.37,승,0.0,0.0,0.0,1214.590108,1210.777217
+11/07,New Orleans Pelicans,Cleveland Cavaliers,Cleveland Cavaliers,0.706,1.36,승,0.0,0.0,0.0,1214.590108,1210.777217
+11/07,Dallas Mavericks,Chicago Bulls,Dallas Mavericks,0.69,1.23,승,0.0,0.0,0.0,1214.590108,1210.777217
+11/07,Denver Nuggets,Oklahoma City Thunder,Oklahoma City Thunder,0.598,1.37,패,0.0,0.0,0.0,1214.590108,1210.777217
+11/07,Phoenix Suns,Miami Heat,Phoenix Suns,0.708,1.53,승,0.1,121.4590108,64.37327572,1214.590108,1275.150493
+11/07,Sacramento Kings,Toronto Raptors,Sacramento Kings,0.781,1.17,승,0.0,0.0,0.0,1214.590108,1275.150493
+11/07,LA Clippers,Philadelphia 76ers,LA Clippers,0.745,1.83,승,0.1,121.4590108,100.810979,1214.590108,1375.961472
+11/08,Chicago Bulls,Minnesota Timberwolves,Minnesota Timberwolves,0.583,1.24,승,0.0,0.0,0.0,1375.961472,1375.961472
+11/08,Milwaukee Bucks,Utah Jazz,Milwaukee Bucks,0.6,1.27,승,0.0,0.0,0.0,1375.961472,1375.961472
+11/08,San Antonio Spurs,Portland Trail Blazers,San Antonio Spurs,0.737,1.58,승,0.1,137.5961472,79.80576538,1375.961472,1455.767237
+11/09,Charlotte Hornets,Indiana Pacers,Indiana Pacers,0.566,1.37,패,0.0,0.0,0.0,1455.767237,1455.767237
+11/09,Detroit Pistons,Atlanta Hawks,Detroit Pistons,0.563,1.82,승,0.03007317073,43.77953668,35.89922008,1455.767237,1491.666458
+11/09,Orlando Magic,New Orleans Pelicans,Orlando Magic,0.639,1.41,승,0.0,0.0,0.0,1455.767237,1491.666458
+11/09,Boston Celtics,Brooklyn Nets,Boston Celtics,0.628,1.12,승,0.0,0.0,0.0,1455.767237,1491.666458
+11/09,New York Knicks,Milwaukee Bucks,New York Knicks,0.668,1.38,승,0.0,0.0,0.0,1455.767237,1491.666458
+11/09,Cleveland Cavaliers,Golden State Warriors,Cleveland Cavaliers,0.585,1.6,승,0.0,0.0,0.0,1455.767237,1491.666458
+11/09,Dallas Mavericks,Phoenix Suns,Dallas Mavericks,0.651,1.72,패,0.1,145.5767237,-145.5767237,1455.767237,1346.089734
+11/09,Memphis Grizzlies,Washington Wizards,Memphis Grizzlies,0.657,1.32,승,0.0,0.0,0.0,1455.767237,1346.089734
+11/09,Oklahoma City Thunder,Houston Rockets,Oklahoma City Thunder,0.586,1.3,승,0.0,0.0,0.0,1455.767237,1346.089734
+11/09,Denver Nuggets,Miami Heat,Denver Nuggets,0.567,1.68,승,0.0,0.0,0.0,1455.767237,1346.089734
+11/09,Minnesota Timberwolves,Portland Trail Blazers,Minnesota Timberwolves,0.76,1.13,승,0.0,0.0,0.0,1455.767237,1346.089734
+11/09,Los Angeles Lakers,Philadelphia 76ers,Los Angeles Lakers,0.748,1.32,승,0.0,0.0,0.0,1455.767237,1346.089734
+11/09,Sacramento Kings,LA Clippers,Sacramento Kings,0.671,1.4,패,0.0,0.0,0.0,1455.767237,1346.089734
+11/10,San Antonio Spurs,Utah Jazz,San Antonio Spurs,0.827,1.41,패,0.1,134.6089734,-134.6089734,1346.089734,1211.48076
+11/10,Cleveland Cavaliers,Brooklyn Nets,Cleveland Cavaliers,0.822,1.12,승,0.0,0.0,0.0,1346.089734,1211.48076
+11/10,Atlanta Hawks,Chicago Bulls,Atlanta Hawks,0.507,1.65,패,0.0,0.0,0.0,1346.089734,1211.48076
+11/10,LA Clippers,Toronto Raptors,LA Clippers,0.718,1.39,승,0.0,0.0,0.0,1346.089734,1211.48076
+11/11,Detroit Pistons,Houston Rockets,Detroit Pistons,0.513,2.62,패,0.1,121.148076,-121.148076,1211.48076,1090.332684
+11/11,Milwaukee Bucks,Boston Celtics,Boston Celtics,0.613,1.56,승,0.0,0.0,0.0,1211.48076,1090.332684
+11/11,Indiana Pacers,New York Knicks,New York Knicks,0.512,1.62,패,0.0,0.0,0.0,1211.48076,1090.332684
+11/11,Orlando Magic,Washington Wizards,Orlando Magic,0.64,1.25,승,0.0,0.0,0.0,1211.48076,1090.332684
+11/11,Oklahoma City Thunder,Golden State Warriors,Oklahoma City Thunder,0.584,1.34,패,0.0,0.0,0.0,1211.48076,1090.332684
+11/11,Philadelphia 76ers,Charlotte Hornets,Charlotte Hornets,0.606,2.36,패,0.1,121.148076,-121.148076,1211.48076,969.1846083
+11/11,Minnesota Timberwolves,Miami Heat,Minnesota Timberwolves,0.734,1.32,패,0.0,0.0,0.0,1211.48076,969.1846083
+11/11,Phoenix Suns,Sacramento Kings,Phoenix Suns,0.52,1.79,패,0.0,0.0,0.0,1211.48076,969.1846083
+11/11,Denver Nuggets,Dallas Mavericks,Denver Nuggets,0.545,1.47,승,0.0,0.0,0.0,1211.48076,969.1846083
+11/11,Portland Trail Blazers,Memphis Grizzlies,Memphis Grizzlies,0.7,1.82,승,0.1,121.148076,99.34142235,1211.48076,1068.526031
+11/11,Los Angeles Lakers,Toronto Raptors,Los Angeles Lakers,0.735,1.17,승,0.0,0.0,0.0,1211.48076,1068.526031
+11/12,San Antonio Spurs,Sacramento Kings,Sacramento Kings,0.544,1.7,패,0.0,0.0,0.0,1068.526031,1068.526031
+11/12,New Orleans Pelicans,Brooklyn Nets,Brooklyn Nets,0.62,1.85,승,0.1,106.8526031,90.82471261,1068.526031,1159.350743
+11/12,Houston Rockets,Washington Wizards,Houston Rockets,0.669,1.16,승,0.0,0.0,0.0,1068.526031,1159.350743
+11/12,Oklahoma City Thunder,LA Clippers,Oklahoma City Thunder,0.672,1.34,승,0.0,0.0,0.0,1068.526031,1159.350743
+11/12,Chicago Bulls,Cleveland Cavaliers,Cleveland Cavaliers,0.585,1.29,승,0.0,0.0,0.0,1068.526031,1159.350743
+11/13,Orlando Magic,Charlotte Hornets,Orlando Magic,0.628,1.31,승,0.0,0.0,0.0,1159.350743,1159.350743
+11/13,Boston Celtics,Atlanta Hawks,Boston Celtics,0.844,1.07,패,0.0,0.0,0.0,1159.350743,1159.350743
+11/13,Detroit Pistons,Miami Heat,Detroit Pistons,0.504,2.04,승,0.02707692308,31.39165089,32.64731693,1159.350743,1191.99806
+11/13,Philadelphia 76ers,New York Knicks,New York Knicks,0.688,1.64,승,0.1,115.9350743,74.19844757,1159.350743,1266.196508
+11/13,Milwaukee Bucks,Toronto Raptors,Milwaukee Bucks,0.571,1.28,승,0.0,0.0,0.0,1159.350743,1266.196508
+11/13,Utah Jazz,Phoenix Suns,Phoenix Suns,0.718,1.43,승,0.06218604651,72.09543924,31.00103888,1159.350743,1297.197547
+11/13,Golden State Warriors,Dallas Mavericks,Golden State Warriors,0.592,1.69,승,0.0006956521739,0.8065048649,0.5564883568,1159.350743,1297.754035
+11/13,Portland Trail Blazers,Minnesota Timberwolves,Minnesota Timberwolves,0.728,1.23,패,0.0,0.0,0.0,1159.350743,1297.754035
+11/14,Orlando Magic,Indiana Pacers,Orlando Magic,0.562,2.04,승,0.1,129.7754035,134.9664196,1297.754035,1432.720455
+11/14,Oklahoma City Thunder,New Orleans Pelicans,Oklahoma City Thunder,0.798,1.08,승,0.0,0.0,0.0,1297.754035,1432.720455
+11/14,Philadelphia 76ers,Cleveland Cavaliers,Cleveland Cavaliers,0.719,1.22,승,0.0,0.0,0.0,1297.754035,1432.720455
+11/14,Brooklyn Nets,Boston Celtics,Boston Celtics,0.554,1.27,승,0.0,0.0,0.0,1297.754035,1432.720455
+11/14,New York Knicks,Chicago Bulls,New York Knicks,0.681,1.27,패,0.0,0.0,0.0,1297.754035,1432.720455
+11/14,Houston Rockets,LA Clippers,Houston Rockets,0.622,1.48,승,0.0,0.0,0.0,1297.754035,1432.720455
+11/14,San Antonio Spurs,Washington Wizards,San Antonio Spurs,0.748,1.22,승,0.0,0.0,0.0,1297.754035,1432.720455
+11/14,Milwaukee Bucks,Detroit Pistons,Milwaukee Bucks,0.597,1.47,승,0.0,0.0,0.0,1297.754035,1432.720455
+11/14,Portland Trail Blazers,Minnesota Timberwolves,Minnesota Timberwolves,0.65,1.24,승,0.0,0.0,0.0,1297.754035,1432.720455
+11/14,Los Angeles Lakers,Memphis Grizzlies,Memphis Grizzlies,0.606,3.35,패,0.1,129.7754035,-129.7754035,1297.754035,1302.945051
+11/14,Sacramento Kings,Phoenix Suns,Sacramento Kings,0.585,1.34,승,0.0,0.0,0.0,1297.754035,1302.945051
+11/15,Utah Jazz,Dallas Mavericks,Dallas Mavericks,0.702,1.28,패,0.0,0.0,0.0,1302.945051,1302.945051
+11/16,Indiana Pacers,Miami Heat,Indiana Pacers,0.532,1.54,패,0.0,0.0,0.0,1302.945051,1302.945051
+11/16,Toronto Raptors,Detroit Pistons,Detroit Pistons,0.577,1.7,승,0.0,0.0,0.0,1302.945051,1302.945051
+11/16,Orlando Magic,Philadelphia 76ers,Orlando Magic,0.739,1.7,승,0.1,130.2945051,91.20615358,1302.945051,1394.151205
+11/16,New York Knicks,Brooklyn Nets,New York Knicks,0.642,1.22,승,0.0,0.0,0.0,1302.945051,1394.151205
+11/16,Cleveland Cavaliers,Chicago Bulls,Cleveland Cavaliers,0.741,1.2,승,0.0,0.0,0.0,1302.945051,1394.151205
+11/16,Atlanta Hawks,Washington Wizards,Atlanta Hawks,0.649,1.26,승,0.0,0.0,0.0,1302.945051,1394.151205
+11/16,San Antonio Spurs,Los Angeles Lakers,San Antonio Spurs,0.604,2.18,패,0.1,130.2945051,-130.2945051,1302.945051,1263.8567
+11/16,New Orleans Pelicans,Denver Nuggets,Denver Nuggets,0.689,1.65,패,0.1,130.2945051,-130.2945051,1302.945051,1133.562194
+11/16,Houston Rockets,LA Clippers,Houston Rockets,0.632,1.52,승,0.0,0.0,0.0,1302.945051,1133.562194
+11/16,Oklahoma City Thunder,Phoenix Suns,Oklahoma City Thunder,0.629,1.31,승,0.0,0.0,0.0,1302.945051,1133.562194
+11/16,Sacramento Kings,Minnesota Timberwolves,Sacramento Kings,0.654,2.08,패,0.1,130.2945051,-130.2945051,1302.945051,1003.267689
+11/16,Golden State Warriors,Memphis Grizzlies,Golden State Warriors,0.522,1.34,승,0.0,0.0,0.0,1302.945051,1003.267689
+11/17,Charlotte Hornets,Milwaukee Bucks,Charlotte Hornets,0.533,2.42,승,0.1,100.3267689,142.4640119,1003.267689,1145.731701
+11/17,Boston Celtics,Toronto Raptors,Boston Celtics,0.895,1.06,승,0.0,0.0,0.0,1003.267689,1145.731701
+11/17,New Orleans Pelicans,Los Angeles Lakers,Los Angeles Lakers,0.602,1.31,승,0.0,0.0,0.0,1003.267689,1145.731701
+11/17,Dallas Mavericks,San Antonio Spurs,Dallas Mavericks,0.691,1.14,승,0.0,0.0,0.0,1003.267689,1145.731701
+11/17,Sacramento Kings,Utah Jazz,Sacramento Kings,0.757,1.22,승,0.0,0.0,0.0,1003.267689,1145.731701
+11/18,Minnesota Timberwolves,Phoenix Suns,Minnesota Timberwolves,0.585,1.36,승,0.0,0.0,0.0,1145.731701,1145.731701
+11/18,Indiana Pacers,Miami Heat,Indiana Pacers,0.532,1.6,승,0.0,0.0,0.0,1145.731701,1145.731701
+11/18,Cleveland Cavaliers,Charlotte Hornets,Cleveland Cavaliers,0.796,1.17,승,0.0,0.0,0.0,1145.731701,1145.731701
+11/18,Washington Wizards,Detroit Pistons,Detroit Pistons,0.611,1.47,승,0.0,0.0,0.0,1145.731701,1145.731701
+11/18,Memphis Grizzlies,Denver Nuggets,Memphis Grizzlies,0.666,1.44,승,0.0,0.0,0.0,1145.731701,1145.731701
+11/18,Portland Trail Blazers,Atlanta Hawks,Atlanta Hawks,0.584,1.56,패,0.0,0.0,0.0,1145.731701,1145.731701
+11/18,New York Knicks,Brooklyn Nets,New York Knicks,0.691,1.23,승,0.0,0.0,0.0,1145.731701,1145.731701
+11/18,Chicago Bulls,Houston Rockets,Houston Rockets,0.61,1.53,승,0.0,0.0,0.0,1145.731701,1145.731701
+11/18,Oklahoma City Thunder,Dallas Mavericks,Oklahoma City Thunder,0.763,1.34,패,0.06594117647,75.5508963,-75.5508963,1145.731701,1070.180805
+11/18,LA Clippers,Utah Jazz,LA Clippers,0.732,1.21,승,0.0,0.0,0.0,1145.731701,1070.180805
+11/19,Detroit Pistons,Chicago Bulls,Detroit Pistons,0.746,1.57,패,0.1,107.0180805,-107.0180805,1070.180805,963.1627245
+11/19,Miami Heat,Philadelphia 76ers,Miami Heat,0.676,1.66,승,0.1,107.0180805,70.63193313,1070.180805,1033.794658
+11/19,New York Knicks,Washington Wizards,New York Knicks,0.818,1.11,승,0.0,0.0,0.0,1070.180805,1033.794658
+11/19,Toronto Raptors,Indiana Pacers,Indiana Pacers,0.574,1.56,패,0.0,0.0,0.0,1070.180805,1033.794658
+11/19,Milwaukee Bucks,Houston Rockets,Houston Rockets,0.506,2.42,패,0.1,107.0180805,-107.0180805,1070.180805,926.7765771
+11/19,Phoenix Suns,Orlando Magic,Orlando Magic,0.52,1.78,승,0.0,0.0,0.0,1070.180805,926.7765771
+11/19,Sacramento Kings,Atlanta Hawks,Sacramento Kings,0.711,1.55,패,0.1,107.0180805,-107.0180805,1070.180805,819.7584966
+11/19,LA Clippers,Golden State Warriors,Golden State Warriors,0.527,1.58,패,0.0,0.0,0.0,1070.180805,819.7584966
+11/20,Boston Celtics,Cleveland Cavaliers,Cleveland Cavaliers,0.634,2.88,패,0.1,81.97584966,-81.97584966,819.7584966,737.782647
+11/20,Brooklyn Nets,Charlotte Hornets,Brooklyn Nets,0.549,1.65,승,0.0,0.0,0.0,819.7584966,737.782647
+11/20,Memphis Grizzlies,Denver Nuggets,Memphis Grizzlies,0.656,1.44,패,0.0,0.0,0.0,819.7584966,737.782647
+11/20,Dallas Mavericks,New Orleans Pelicans,Dallas Mavericks,0.804,1.12,승,0.0,0.0,0.0,819.7584966,737.782647
+11/20,San Antonio Spurs,Oklahoma City Thunder,Oklahoma City Thunder,0.589,1.22,패,0.0,0.0,0.0,819.7584966,737.782647
+11/20,Los Angeles Lakers,Utah Jazz,Los Angeles Lakers,0.813,1.17,승,0.0,0.0,0.0,819.7584966,737.782647
+11/21,Cleveland Cavaliers,New Orleans Pelicans,Cleveland Cavaliers,0.868,1.1,승,0.0,0.0,0.0,737.782647,737.782647
+11/21,Milwaukee Bucks,Chicago Bulls,Milwaukee Bucks,0.626,1.28,승,0.0,0.0,0.0,737.782647,737.782647
+11/21,Oklahoma City Thunder,Portland Trail Blazers,Oklahoma City Thunder,0.724,1.13,승,0.0,0.0,0.0,737.782647,737.782647
+11/21,Memphis Grizzlies,Philadelphia 76ers,Memphis Grizzlies,0.811,2.42,승,0.1,73.7782647,104.7651359,737.782647,842.5477828
+11/21,Houston Rockets,Indiana Pacers,Houston Rockets,0.679,1.42,승,0.0,0.0,0.0,737.782647,842.5477828
+11/21,Golden State Warriors,Atlanta Hawks,Golden State Warriors,0.69,1.31,승,0.0,0.0,0.0,737.782647,842.5477828
+11/21,Phoenix Suns,New York Knicks,New York Knicks,0.581,1.49,승,0.0,0.0,0.0,737.782647,842.5477828
+11/21,LA Clippers,Orlando Magic,Orlando Magic,0.512,1.57,패,0.0,0.0,0.0,737.782647,842.5477828
+11/22,Charlotte Hornets,Detroit Pistons,Detroit Pistons,0.564,1.89,패,0.07411235955,62.44320422,-62.44320422,842.5477828,780.1045786
+11/22,Toronto Raptors,Minnesota Timberwolves,Minnesota Timberwolves,0.612,1.34,패,0.0,0.0,0.0,842.5477828,780.1045786
+11/22,San Antonio Spurs,Utah Jazz,San Antonio Spurs,0.776,1.68,승,0.1,84.25477828,57.29324923,842.5477828,837.3978278
+11/22,Los Angeles Lakers,Orlando Magic,Los Angeles Lakers,0.611,1.52,패,0.0,0.0,0.0,842.5477828,837.3978278
+11/23,Philadelphia 76ers,Brooklyn Nets,Brooklyn Nets,0.541,2.48,패,0.1,83.73978278,-83.73978278,837.3978278,753.658045
+11/23,Washington Wizards,Boston Celtics,Boston Celtics,0.662,1.07,승,0.0,0.0,0.0,837.3978278,753.658045
+11/23,New Orleans Pelicans,Golden State Warriors,Golden State Warriors,0.749,1.2,승,0.0,0.0,0.0,837.3978278,753.658045
+11/23,Milwaukee Bucks,Indiana Pacers,Milwaukee Bucks,0.573,1.45,승,0.0,0.0,0.0,837.3978278,753.658045
+11/23,Chicago Bulls,Atlanta Hawks,Atlanta Hawks,0.569,1.86,패,0.0678372093,56.80673172,-56.80673172,837.3978278,696.8513133
+11/23,Houston Rockets,Portland Trail Blazers,Houston Rockets,0.716,1.12,승,0.0,0.0,0.0,837.3978278,696.8513133
+11/23,Denver Nuggets,Dallas Mavericks,Dallas Mavericks,0.568,2.42,승,0.1,83.73978278,118.9104916,837.3978278,815.7618049
+11/23,LA Clippers,Sacramento Kings,Sacramento Kings,0.535,1.64,패,0.0,0.0,0.0,837.3978278,815.7618049
+11/24,Utah Jazz,New York Knicks,New York Knicks,0.754,1.29,패,0.0,0.0,0.0,815.7618049,815.7618049
+11/24,Orlando Magic,Detroit Pistons,Orlando Magic,0.66,1.22,승,0.0,0.0,0.0,815.7618049,815.7618049
+11/24,Chicago Bulls,Memphis Grizzlies,Memphis Grizzlies,0.674,1.51,승,0.03478431373,28.37571455,14.47161442,815.7618049,830.2334193
+11/24,Houston Rockets,Portland Trail Blazers,Houston Rockets,0.773,1.12,패,0.0,0.0,0.0,815.7618049,830.2334193
+11/24,Milwaukee Bucks,Charlotte Hornets,Milwaukee Bucks,0.641,1.34,승,0.0,0.0,0.0,815.7618049,830.2334193
+11/24,San Antonio Spurs,Golden State Warriors,San Antonio Spurs,0.534,2.28,승,0.1,81.57618049,104.417511,815.7618049,934.6509303
+11/24,Los Angeles Lakers,Denver Nuggets,Los Angeles Lakers,0.72,1.54,패,0.1,81.57618049,-81.57618049,815.7618049,853.0747498
+11/25,Boston Celtics,Minnesota Timberwolves,Boston Celtics,0.695,1.25,승,0.0,0.0,0.0,853.0747498,853.0747498
+11/25,Indiana Pacers,Washington Wizards,Indiana Pacers,0.712,1.13,승,0.0,0.0,0.0,853.0747498,853.0747498
+11/25,Philadelphia 76ers,LA Clippers,LA Clippers,0.642,1.77,승,0.1,85.30747498,65.68675574,853.0747498,918.7615056
+11/25,Miami Heat,Dallas Mavericks,Dallas Mavericks,0.588,2.24,패,0.1,85.30747498,-85.30747498,853.0747498,833.4540306
+11/25,Cleveland Cavaliers,Toronto Raptors,Cleveland Cavaliers,0.841,1.15,승,0.0,0.0,0.0,853.0747498,833.4540306
+11/25,Sacramento Kings,Brooklyn Nets,Sacramento Kings,0.686,1.24,패,0.0,0.0,0.0,853.0747498,833.4540306
+11/26,Charlotte Hornets,Orlando Magic,Orlando Magic,0.565,1.48,승,0.0,0.0,0.0,833.4540306,833.4540306
+11/26,Indiana Pacers,New Orleans Pelicans,Indiana Pacers,0.712,1.43,승,0.04223255814,35.1988958,15.1355252,833.4540306,848.5895558
+11/26,Detroit Pistons,Toronto Raptors,Detroit Pistons,0.653,1.48,승,0.0,0.0,0.0,833.4540306,848.5895558
+11/26,Atlanta Hawks,Dallas Mavericks,Atlanta Hawks,0.519,1.69,패,0.0,0.0,0.0,833.4540306,848.5895558
+11/26,Boston Celtics,LA Clippers,Boston Celtics,0.72,1.2,승,0.0,0.0,0.0,833.4540306,848.5895558
+11/26,Memphis Grizzlies,Portland Trail Blazers,Memphis Grizzlies,0.72,1.21,승,0.0,0.0,0.0,833.4540306,848.5895558
+11/26,Denver Nuggets,New York Knicks,New York Knicks,0.554,2.44,승,0.1,83.34540306,120.0173804,833.4540306,968.6069362
+11/26,Sacramento Kings,Oklahoma City Thunder,Oklahoma City Thunder,0.566,1.54,승,0.0,0.0,0.0,833.4540306,968.6069362
+11/26,Golden State Warriors,Brooklyn Nets,Golden State Warriors,0.782,1.11,패,0.0,0.0,0.0,833.4540306,968.6069362
+11/27,Washington Wizards,Chicago Bulls,Chicago Bulls,0.5713489651679993,1.51,,0.0,0.0,0.0,968.6069362,968.6069362
+11/27,Miami Heat,Milwaukee Bucks,Miami Heat,0.5433902144432068,1.75,,0.0,0.0,0.0,968.6069362,968.6069362
+11/27,Minnesota Timberwolves,Houston Rockets,Houston Rockets,0.5275548696517944,2.28,,0.1,96.86069362,0.0,968.6069362,968.6069362
+11/27,Utah Jazz,San Antonio Spurs,San Antonio Spurs,0.6825711131095886,1.74,,0.1,96.86069362,0.0,968.6069362,968.6069362
+11/27,Phoenix Suns,Los Angeles Lakers,Phoenix Suns,0.5265825986862183,1.77,,0.0,0.0,0.0,968.6069362,968.6069362
