@@ -1,21 +1,21 @@
 ------------기대값 & 켈리 기준-----------
-Charlotte Hornets 기대값: 33.27 뱅크롤 비율: 11.68%
-New York Knicks 기대값: -16.20 뱅크롤 비율: 0%
-Atlanta Hawks 기대값: 10.09 뱅크롤 비율: 5.2%
-Cleveland Cavaliers 기대값: -10.83 뱅크롤 비율: 0%
-Memphis Grizzlies 기대값: 1.67 뱅크롤 비율: 8.64%
-New Orleans Pelicans 기대값: -27.06 뱅크롤 비율: 0%
-Minnesota Timberwolves 기대값: -17.64 뱅크롤 비율: 0%
-LA Clippers 기대값: 23.53 뱅크롤 비율: 12.38%
-Brooklyn Nets 기대값: 21.13 뱅크롤 비율: 13.2%
-Orlando Magic 기대값: -18.48 뱅크롤 비율: 0%
-Chicago Bulls 기대값: 48.64 뱅크롤 비율: 15.69%
-Boston Celtics 기대값: -19.91 뱅크롤 비율: 0%
-Miami Heat 기대값: 10.28 뱅크롤 비율: 29.08%
-Toronto Raptors 기대값: -39.72 뱅크롤 비율: 0%
-Indiana Pacers 기대값: -9.22 뱅크롤 비율: 0%
-Detroit Pistons 기대값: 9.77 뱅크롤 비율: 3.91%
-Portland Trail Blazers 기대값: -6.81 뱅크롤 비율: 0%
-Sacramento Kings 기대값: -2.29 뱅크롤 비율: 0%
-Los Angeles Lakers 기대값: -20.26 뱅크롤 비율: 0%
-Oklahoma City Thunder 기대값: 13.16 뱅크롤 비율: 13.79%
+Charlotte Hornets 기대값: 107.70 뱅크롤 비율: 21.54%
+New York Knicks 기대값: -25.28 뱅크롤 비율: 0%
+Atlanta Hawks 기대값: 29.19 뱅크롤 비율: 11.91%
+Cleveland Cavaliers 기대값: -16.59 뱅크롤 비율: 0%
+Memphis Grizzlies 기대값: 0.33 뱅크롤 비율: 0.69%
+New Orleans Pelicans 기대값: -20.72 뱅크롤 비율: 0%
+Minnesota Timberwolves 기대값: -13.89 뱅크롤 비율: 0%
+LA Clippers 기대값: 14.15 뱅크롤 비율: 8.43%
+Brooklyn Nets 기대값: 70.04 뱅크롤 비율: 26.43%
+Orlando Magic 기대값: -30.40 뱅크롤 비율: 0%
+Chicago Bulls 기대값: 66.76 뱅크롤 비율: 18.55%
+Boston Celtics 기대값: -22.39 뱅크롤 비율: 0%
+Miami Heat 기대값: 12.38 뱅크롤 비율: 33.37%
+Toronto Raptors 기대값: -42.42 뱅크롤 비율: 0%
+Indiana Pacers 기대값: -0.17 뱅크롤 비율: 0%
+Detroit Pistons 기대값: -10.93 뱅크롤 비율: 0%
+Portland Trail Blazers 기대값: -8.92 뱅크롤 비율: 0%
+Sacramento Kings 기대값: -1.25 뱅크롤 비율: 0%
+Los Angeles Lakers 기대값: -13.12 뱅크롤 비율: 0%
+Oklahoma City Thunder 기대값: 4.45 뱅크롤 비율: 5.36%
