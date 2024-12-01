@@ -279,8 +279,18 @@
 11/30,Indiana Pacers,Detroit Pistons,Indiana Pacers,0.6550685167312622,1.48,패,0.0,0.0,0.0,1422.177045,1422.177045
 11/30,Portland Trail Blazers,Sacramento Kings,Sacramento Kings,0.6846473217010498,1.36,패,0.0,0.0,0.0,1422.177045,1422.177045
 11/30,Los Angeles Lakers,Oklahoma City Thunder,Oklahoma City Thunder,0.6035106778144836,1.65,승,0.0,0.0,0.0,1422.177045,1422.177045
-12/01,Charlotte Hornets,Atlanta Hawks,Charlotte Hornets,0.5438905358314514,2.98,,0.1,142.2177045,0.0,1422.177045,1422.177045
-12/01,Detroit Pistons,Philadelphia 76ers,Detroit Pistons,0.6745651960372925,1.85,,0.1,142.2177045,0.0,1422.177045,1422.177045
-12/01,Milwaukee Bucks,Washington Wizards,Milwaukee Bucks,0.8018418550491333,1.08,,0.0,0.0,0.0,1422.177045,1422.177045
-12/01,Phoenix Suns,Golden State Warriors,Golden State Warriors,0.5862395167350769,2.18,,0.1,142.2177045,0.0,1422.177045,1422.177045
-12/01,Utah Jazz,Dallas Mavericks,Dallas Mavericks,0.7448322176933289,1.38,,0.1,142.2177045,0.0,1422.177045,1422.177045
+12/01,Charlotte Hornets,Atlanta Hawks,Charlotte Hornets,0.5438905358314514,2.98,패,0.1,142.2177045,-142.2177045,1422.177045,1279.95934
+12/01,Detroit Pistons,Philadelphia 76ers,Detroit Pistons,0.6745651960372925,1.85,패,0.1,127.995934,-127.995934,1279.95934,1151.963406
+12/01,Milwaukee Bucks,Washington Wizards,Milwaukee Bucks,0.8018418550491333,1.08,승,0.0,0.0,0.0,1151.963406,1151.963406
+12/01,Phoenix Suns,Golden State Warriors,Golden State Warriors,0.5862395167350769,2.18,패,0.1,115.1963406,-115.1963406,1151.963406,1036.767066
+12/01,Utah Jazz,Dallas Mavericks,Dallas Mavericks,0.7448322176933289,1.38,승,0.1,103.6767066,39.39714849,1036.767066,1076.164214
+12/02,Brooklyn Nets,Orlando Magic,Orlando Magic,0.6091349124908447,1.3,,0.0,0.0,0.0,1076.164214,1076.164214
+12/02,Memphis Grizzlies,Indiana Pacers,Memphis Grizzlies,0.7484394907951355,1.32,,0.0,0.0,0.0,1076.164214,1076.164214
+12/02,New York Knicks,New Orleans Pelicans,New York Knicks,0.8049648404121399,1.14,,0.0,0.0,0.0,1076.164214,1076.164214
+12/02,Cleveland Cavaliers,Boston Celtics,Cleveland Cavaliers,0.6566795110702515,2.08,,10.0,107.6164214,0.0,1076.164214,1076.164214
+12/02,Toronto Raptors,Miami Heat,Toronto Raptors,0.5027675032615662,2.64,,10.0,107.6164214,0.0,1076.164214,1076.164214
+12/02,Houston Rockets,Oklahoma City Thunder,Houston Rockets,0.5476081967353821,2.06,,10.0,107.6164214,0.0,1076.164214,1076.164214
+12/02,Utah Jazz,Los Angeles Lakers,Los Angeles Lakers,0.6315953135490417,1.31,,0.0,0.0,0.0,1076.164214,1076.164214
+12/02,Portland Trail Blazers,Dallas Mavericks,Dallas Mavericks,0.7337540984153748,1.31,,0.0,0.0,0.0,1076.164214,1076.164214
+12/02,Sacramento Kings,San Antonio Spurs,Sacramento Kings,0.571020781993866,1.45,,0.0,0.0,0.0,1076.164214,1076.164214
+12/02,LA Clippers,Denver Nuggets,LA Clippers,0.5370851755142212,2.14,,10.0,107.6164214,0.0,1076.164214,1076.164214
