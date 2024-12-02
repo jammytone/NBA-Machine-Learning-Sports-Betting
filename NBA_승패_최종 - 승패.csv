@@ -284,13 +284,17 @@
 12/01,Milwaukee Bucks,Washington Wizards,Milwaukee Bucks,0.8018418550491333,1.08,승,0.0,0.0,0.0,1151.963406,1151.963406
 12/01,Phoenix Suns,Golden State Warriors,Golden State Warriors,0.5862395167350769,2.18,패,0.1,115.1963406,-115.1963406,1151.963406,1036.767066
 12/01,Utah Jazz,Dallas Mavericks,Dallas Mavericks,0.7448322176933289,1.38,승,0.1,103.6767066,39.39714849,1036.767066,1076.164214
-12/02,Brooklyn Nets,Orlando Magic,Orlando Magic,0.603795051574707,1.34,,0.0,0.0,0.0,1076.164214,1076.164214
-12/02,Memphis Grizzlies,Indiana Pacers,Memphis Grizzlies,0.740447998046875,1.38,,10.0,107.6164214,0.0,1076.164214,1076.164214
-12/02,New York Knicks,New Orleans Pelicans,New York Knicks,0.8049648404121399,1.14,,0.0,0.0,0.0,1076.164214,1076.164214
-12/02,Cleveland Cavaliers,Boston Celtics,Cleveland Cavaliers,0.5849980115890503,2.0,,10.0,107.6164214,0.0,1076.164214,1076.164214
-12/02,Toronto Raptors,Miami Heat,Miami Heat,0.5248010158538818,1.53,,0.0,0.0,0.0,1076.164214,1076.164214
-12/02,Houston Rockets,Oklahoma City Thunder,Houston Rockets,0.5056374073028564,2.1,,10.0,107.6164214,0.0,1076.164214,1076.164214
-12/02,Utah Jazz,Los Angeles Lakers,Los Angeles Lakers,0.6963968276977539,1.31,,0.0,0.0,0.0,1076.164214,1076.164214
-12/02,Sacramento Kings,San Antonio Spurs,Sacramento Kings,0.5746330618858337,1.4,,0.0,0.0,0.0,1076.164214,1076.164214
-12/02,Portland Trail Blazers,Dallas Mavericks,Dallas Mavericks,0.6721597909927368,1.34,,0.0,0.0,0.0,1076.164214,1076.164214
-12/02,LA Clippers,Denver Nuggets,LA Clippers,0.5457349419593811,2.22,,10.0,107.6164214,0.0,1076.164214,1076.164214
+12/02,Brooklyn Nets,Orlando Magic,Orlando Magic,0.603795051574707,1.34,승,0.0,0.0,0.0,1076.164214,1076.164214
+12/02,Memphis Grizzlies,Indiana Pacers,Memphis Grizzlies,0.740447998046875,1.38,패,10.0,107.6164214,-107.6164214,1076.164214,968.5477926
+12/02,New York Knicks,New Orleans Pelicans,New York Knicks,0.8049648404121399,1.14,승,0.0,0.0,0.0,968.5477926,968.5477926
+12/02,Cleveland Cavaliers,Boston Celtics,Cleveland Cavaliers,0.5849980115890503,2.0,패,10.0,96.85477926,-96.85477926,968.5477926,871.6930133
+12/02,Toronto Raptors,Miami Heat,Miami Heat,0.5248010158538818,1.53,패,0.0,0.0,0.0,871.6930133,871.6930133
+12/02,Houston Rockets,Oklahoma City Thunder,Houston Rockets,0.5056374073028564,2.1,패,10.0,87.16930133,-87.16930133,871.6930133,784.523712
+12/02,Utah Jazz,Los Angeles Lakers,Los Angeles Lakers,0.6963968276977539,1.31,승,0.0,0.0,0.0,784.523712,784.523712
+12/02,Sacramento Kings,San Antonio Spurs,Sacramento Kings,0.5746330618858337,1.4,패,0.0,0.0,0.0,784.523712,784.523712
+12/02,Portland Trail Blazers,Dallas Mavericks,Dallas Mavericks,0.6721597909927368,1.34,승,0.0,0.0,0.0,784.523712,784.523712
+12/02,LA Clippers,Denver Nuggets,LA Clippers,0.5457349419593811,2.22,패,10.0,78.4523712,-78.4523712,784.523712,706.0713408
+12/03,Atlanta Hawks,New Orleans Pelicans,Atlanta Hawks,0.7358695268630981,1.22,승,0.0,0.0,0.0,706.0713408,706.0713408
+12/03,Boston Celtics,Miami Heat,Boston Celtics,0.8066224455833435,1.19,승,0.0,0.0,0.0,706.0713408,706.0713408
+12/03,Chicago Bulls,Brooklyn Nets,Chicago Bulls,0.5162237286567688,1.42,승,0.0,0.0,0.0,706.0713408,706.0713408
+12/03,Minnesota Timberwolves,Los Angeles Lakers,Minnesota Timberwolves,0.5604197382926941,1.4,승,0.0,0.0,0.0,706.0713408,706.0713408
